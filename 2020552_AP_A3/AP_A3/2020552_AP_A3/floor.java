@@ -61,21 +61,6 @@ public class floor {
 
         return l;
     }
-    public boolean checkPowerup(player p1){
-        if(p1.p.getType()=="SnakeKiller" || p1.p.getType()=="jetPack"){
-            return true;
-        }
-        return false;
-    }
-
-    public void changeJump(){
-        //this.jump=jump;
-       // return jump;
-
-    }
-    public void retainJump(){
-
-    }
 
 }
 
@@ -85,29 +70,6 @@ class emptyFloor extends floor{
         this.type = "empty floor";
         this.jump=0;
     }
-    @Override
-    public boolean checkPowerup(player p1){
-        //System.out.println("BFBFBDF");
-        if(p1.p.getType()=="jetPack"){
-           //System.out.println("FSADSA");
-            return true;
-        }
-        //System.out.println("DSDSADA");
-        return false;
-
-        
-    }
-    @Override
-    public void changeJump(){
-        if(this.getFloorNo()<12){
-        this.jump+=2;
-        }
-       
-
-    }
-    public void retainJump(){
-     this.jump=0;   
-    }
 
 }
 
@@ -116,24 +78,6 @@ class KingCobrs extends floor{
         this.points=-4;
         this.type = "King Cobra";
         this.jump=-8;
-    }
-    public boolean checkPowerup(player p1){
-        if(p1.p.getType()=="SnakeKiller"){
-            //this.jump=0;
-            return true;
-        }
-        return false;
-
-    }
-    @Override
-    public void changeJump(){
-        //jump=0;
-        this.jump=-1;
-       // return jump;
-
-    }
-    public void retainJump(){
-        this.jump=-8;   
     }
 
 }
@@ -155,30 +99,10 @@ class ladder extends floor{
 }
 
 class snake extends floor{
-    boolean snakeKiller;
     snake(){
         this.points=-2;
         this.type = "Snake";
         this.jump=-4;
-    }
-    @Override
-    public boolean checkPowerup(player p1){
-        if(p1.p.getType()=="SnakeKiller"){
-            //this.jump=0;
-            return true;
-        }
-        return false;
-
-    }
-    @Override
-    public void changeJump(){
-        //jump=0;
-        this.jump=0;
-       // return jump;
-
-    }
-    public void retainJump(){
-        this.jump=-4;   
     }
 }
 
